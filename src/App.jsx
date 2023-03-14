@@ -1,14 +1,23 @@
 import { useState } from 'react'
+import { UserContext } from './context/UserContext'
+import Homepage from './pages/Homepage'
+
+
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [userInfo, setUserInfor] = useState({login: "joao", senha: 123})
+  
 
   return (
-    <div className="App">
-      
-    </div>
+    <UserContext.Provider value={userInfo}>
+      <div className="App">
+        <Homepage/>
+        
+      </div>
+    </UserContext.Provider>
   )
 }
 
